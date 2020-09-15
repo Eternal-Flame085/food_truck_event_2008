@@ -1,5 +1,6 @@
 class FoodTruck
-  def initialize(info)
-    
+  attr_reader :name
+  def initialize(name)
+    @name = name
   end
 end
