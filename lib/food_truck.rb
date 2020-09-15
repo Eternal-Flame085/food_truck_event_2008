@@ -24,7 +24,7 @@ class FoodTruck
   def potential_revenue
     revenue = 0
     @inventory.each do |key, quantity|
-      revenue += (key.price.split('$')[1].to_f) * quantity.to_f
+      revenue += (key.price.delete("$").to_f) * quantity.to_f
     end
     revenue
   end
