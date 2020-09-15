@@ -34,4 +34,14 @@ class EventTest < Minitest::Test
     assert_equal "South Pearl Street Farmers Market", event.name
     assert_equal [], event.food_trucks
   end
+
+  def test_add_food_truck
+    event = Event.new("South Pearl Street Farmers Market")
+    event.add_food_truck(@food_truck1)
+    event.add_food_truck(@food_truck2)
+    event.add_food_truck(@food_truck3)
+
+    expected = [@food_truck1, @food_truck2, @food_truck3]
+    assert_equal expected, event.food_trucks
+  end
 end
